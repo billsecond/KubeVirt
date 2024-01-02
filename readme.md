@@ -148,7 +148,7 @@ NOTE: This will reboot your server.
 
 6. Start Minikube
 ```sh
-minikube start --driver=qemu2
+minikube start --driver=qemu2 --disk-size 500G
 ```
 
 ![Alt text](image-4.png)
@@ -172,7 +172,6 @@ kubectl apply -f https://github.com/kubevirt/kubevirt/releases/download/${RELEAS
 4. Wait until all KubeVirt components are up
 ```sh
 kubectl -n kubevirt wait kv kubevirt --for condition=Available
-https://storage.googleapis.com/kubevirt-prow/release/kubevirt/kubevirt/stable.txt
 ```
 
 
@@ -367,11 +366,11 @@ spec:
               model: e1000e
           tpm: {}
         cpu:
-          cores: 8
+          cores: 2
           sockets: 1
           threads: 1
         memory:
-          guest: 8Gi
+          guest: 2Gi
         machine:
           type: pc-q35-rhel9.2.0
         firmware:
