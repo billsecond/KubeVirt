@@ -19,11 +19,13 @@ Note: Install Ubuntu Desktop for this as we will need to use it for VNC later
 
 2. Modify the VM before starting
 - Disable Secure Boot
+
 ![Alt text](image-11.png)
 
 1. Open the Powershell in Administrative Mode
 
 2. Run the following command once you have created it.
+
 ```ps
 Set-VMProcessor -VMName KubeVirtLinux4 -ExposeVirtualizationExtensions $true
 ```
