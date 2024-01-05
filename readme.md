@@ -94,12 +94,11 @@ curl -fsSL \
      -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 sudo apt-get update
-sudo apt-get remove docker docker-engine docker.io
-sudo apt install docker.io
+sudo apt-get remove docker docker-engine docker.io -y
+sudo apt install docker.io -y
 
 sudo systemctl enable docker
 sudo systemctl start docker
-sudo systemctl status docker
 ```
 
 ## Install required files for Qemu2
@@ -150,7 +149,7 @@ NOTE: This will reboot your server.
 
 6. Start Minikube
 ```sh
-minikube start --driver=qemu2 --disk-size 500G
+minikube start --driver=qemu2 --vm-driver=none --cpus=12 --disk-size 500G
 ```
 
 ![Alt text](image-4.png)
@@ -479,3 +478,20 @@ kubectl logs $(kubectl get pods -o name)
 ```sh
 virtctl start windowsvm
 ```
+
+
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
